@@ -1,0 +1,40 @@
+body {
+    background: url('https://media.giphy.com/media/l4hLRAwCyCjXiPbos/giphy.gif') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card, .jumbotron {
+    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    background: inherit;    
+    z-index: 1;
+}
+
+.card:before, .jumbotron:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: inherit;
+    box-shadow: inset 0 0 125rem rgb(255, 255, 255, 0.75);
+    filter: blur(0.3125rem);
+    z-index: -1;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#search:active {
+    transform: translateY(0.125em);
+}
+
+h1 {
+    font-family: cursive;
+    text-decoration-color: rgb(255, 255, 255, 0.8);
+}

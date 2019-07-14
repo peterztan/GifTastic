@@ -49,9 +49,12 @@ $('document').ready(function () {
                     var memeImage = $("<img>");
 
                     memeImage.attr("src", results[i].images.fixed_height_small_still.url);
+                    memeImage.attr("data-state", "still");
+                    memeImage.attr("data-still", results[i].images.fixed_height_small_still.url);
+                    memeImage.attr("data-animate", results[i].images.fixed_height_small.url);
 
                     memeImage.addClass("card-img img-fluid shadow-lg rounded");
-                    memeImage.addClass("memeImg");
+                    memeImage.addClass("gif");
 
                     memesDiv.append(memeImage);
                     memesDiv.append(p);
@@ -73,7 +76,7 @@ $('document').ready(function () {
     });
 
     $(document).on("click", ".topic", getMemes);
-    $(document).on("click", ".memeImg", function () {
+    $('#results').on("click", ".gif", function () {
 
         var memeState = $(this).attr("data-state");
         if (memeState === "still") {

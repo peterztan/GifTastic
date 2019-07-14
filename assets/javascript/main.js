@@ -20,7 +20,7 @@ $('document').ready(function () {
         $('#results').empty();
 
         var memes = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=Y9pnMmdPnIYLKiuzi40iVVmzTU8mCNfF&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=Y9pnMmdPnIYLKiuzi40iVVmzTU8mCNfF&limit=10";
 
         $.ajax({
             url: queryURL,

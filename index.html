@@ -14,35 +14,44 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron shadow-sm p-3 mb-5 rounded">
-            <div class="header">
-                <h1 class="text-center">Add in your dreams below...</h1>
-            </div>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="col-md-12">
-                <div class="card shadow-lg p-3 mb-5 rounded">
-
-                    <div class="card-body">
-                        <form class="form-inline">
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label for="inputKeyword" class="sr-only">Keyword</label>
-                                <input type="keyword" class="form-control shadow-sm p-3 mb-5 rounded" id="inputKeyword"
-                                    placeholder="Keyword">
+        <div class="jumbotron-transparent">
+            <div class="row justify-content-md-center">
+                <div class="col-md-12">
+                    <div class="card shadow-lg p-3 mb-5 rounded">
+                        <div class="card-body row justify-content-md-center">
+                            <div class="col-md-12">
+                                <h3 class="text-light text-center">
+                                    Click the following buttons to see some GIFs associated with them
+                                </h3>
                             </div>
-                            <button id="search" type="submit" class="btn-sm btn-danger shadow-sm p-3 mb-5 rounded">Add
-                            </button>
-                        </form>
+                            <div class="col-md-12 row justify-content-md-center" id="topics"></div>
+                            <form class="form col-md-12">
+                                <div class="form-group mx-sm-3 mb-2 row justify-content-md-center">
+                                    <label for="inputKeyword">
+                                        <h5 class="text-light">You can also add something yourself below!</h5>
+                                    </label>
+                                    <input type="keyword" class="form-control shadow-sm p-3 mb-5 rounded"
+                                        id="inputTopic" placeholder="Keyword">
+                                    <button id="add" type="button"
+                                        class="btn btn-sm btn-block btn-dark shadow-lg p-1 mb-5 rounded">
+                                        Add
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="col-md-12" id="results"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>

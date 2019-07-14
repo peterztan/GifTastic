@@ -26,34 +26,39 @@ $('document').ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-          var results = response.data;
-          console.log(response.data);
+            var results = response.data;
+            console.log(response.data);
 
-          for (var i = 0; i < results.length; i++) {
+            for (var i = 0; i < results.length; i++) {
 
-            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-              var memesDiv = $("<div>");
-              memesDiv.addClass("row justify-content-md-center");
+                if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+                    var memesDiv = $("<div>");
+                    memesDiv.addClass("card-transparent row justify-content-md-center");
 
-              var rating = results[i].rating;
+                    var rating = results[i].rating;
+                    var title = results[i].title;
 
-              var p = $("<h1>");
+                    var p = $("<h1>");
 
-              p.addClass("card-header text-light");
-              
-              p.text("Rating: " + rating);
+                    p.addClass("col-md-12 card-footer text-left text-light");
+                    p.addClass("shadow-lg p-1 mb-5 rounded");
 
-              var memeImage = $("<img>");
+                    p.text("Title: " + title);
+                    p.append("<br>");
+                    p.append("Rating: " + rating);
+                    var memeImage = $("<img>");
 
-              memeImage.attr("src", results[i].images.fixed_height.url);
-              memeImage.addClass("card-img img-fluid");
+                    memeImage.attr("src", results[i].images.fixed_height_small_still.url);
 
-              memesDiv.append(memeImage);
-              memesDiv.append(p);
+                    memeImage.addClass("card-img img-fluid shadow-lg rounded");
+                    memeImage.addClass("memeImg");
 
-              $("#results").prepend(memesDiv);
+                    memesDiv.append(memeImage);
+                    memesDiv.append(p);
+
+                    $("#results").prepend(memesDiv);
+                }
             }
-          }
         });
     };
 
@@ -68,6 +73,18 @@ $('document').ready(function () {
     });
 
     $(document).on("click", ".topic", getMemes);
+    $(document).on("click", ".memeImg", function () {
+
+        var memeState = $(this).attr("data-state");
+        if (memeState === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+
+    });
 
     pushTopic();
 

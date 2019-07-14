@@ -19,6 +19,12 @@ $('document').ready(function () {
     function getMemes() {
         $('#results').empty();
 
+        var s = $("<h3>");
+        s.addClass("dark text-light text-center");
+        s.text("Click on the GIFs below to animate them!");
+
+        $('#info').append(s);
+
         var memes = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=Y9pnMmdPnIYLKiuzi40iVVmzTU8mCNfF&limit=10";
 
@@ -38,7 +44,7 @@ $('document').ready(function () {
                     var rating = results[i].rating;
                     var title = results[i].title;
 
-                    var p = $("<h1>");
+                    var p = $("<h5>");
 
                     p.addClass("col-md-12 card-footer text-left text-light");
                     p.addClass("shadow-lg p-1 mb-5 rounded");
@@ -46,6 +52,7 @@ $('document').ready(function () {
                     p.text("Title: " + title);
                     p.append("<br>");
                     p.append("Rating: " + rating);
+
                     var memeImage = $("<img>");
 
                     memeImage.attr("src", results[i].images.fixed_height_small_still.url);
@@ -73,6 +80,11 @@ $('document').ready(function () {
             topics.push(getTopic);
             pushTopic();
         };
+    });
+
+    $('#clear').on('click', function () {
+        $('#info').empty();
+        $('#results').empty();
     });
 
     $(document).on("click", ".topic", getMemes);

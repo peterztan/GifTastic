@@ -5,14 +5,14 @@ body {
     background-position: center;
 }
 
-.card {
+#frostedGlass {
     box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     position: relative;
     background: inherit;    
     z-index: 1;    
 }
 
-.card:before {
+#frostedGlass:before {
     content: "";
     position: absolute;
     top: 0;
@@ -64,10 +64,19 @@ button:active {
 button:hover {
     background: linear-gradient(30deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
     background-size: 1800% 1800%;
-    -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
+    -webkit-animation: rainbow 8s ease-in-out infinite;
+    -z-animation: rainbow 8s ease-in-out infinite;
+    -o-animation: rainbow 8s ease-in-out infinite;
+    animation: rainbow 8s ease-in-out infinite;
+}
+
+.card-footer {
+    background: linear-gradient(30deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 16s ease-in-out infinite;
+    -z-animation: rainbow 16s ease-in-out infinite;
+    -o-animation: rainbow 16s ease-in-out infinite;
+    animation: rainbow 16s ease-in-out infinite;
 }
 
 h1 {

@@ -14,40 +14,38 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron-transparent">
-            <div class="row justify-content-md-center">
-                <div class="col-md-12">
-                    <div id="frostedGlass" class="card shadow-lg p-3 mb-5 rounded">
-                        <div class="card-body row justify-content-md-center">
-                            <div class="col-md-12">
-                                <h3 class="text-light text-center">
-                                    Click the following buttons to see some GIFs associated with them
-                                </h3>
-                                <h5 class="text-light text-center">
-                                    (P.S: Hover over the buttons to see some MAGIC!)
-                                </h5>
-                            </div>
-                            <div class="col-md-12 row justify-content-md-center" id="topics"></div>
-                            <form class="form col-md-12">
-                                <div class="form-group mx-sm-3 mb-2 row justify-content-md-center">
-                                    <label for="inputKeyword">
-                                        <h5 class="text-light">You can also add something yourself below!</h5>
-                                    </label>
-                                    <input type="keyword" class="form-control shadow-sm p-3 mb-5 rounded"
-                                        id="inputTopic" placeholder="Keyword">
-                                    <button id="add" type="button"
-                                        class="btn btn-sm btn-block btn-dark shadow-lg p-1 mb-5 rounded">
-                                        Add Topic
-                                    </button>
-                                    <button id="clear" type="button"
-                                        class="btn btn-sm btn-block btn-dark shadow-lg p-1 mb-5 rounded">
-                                        Clear Page
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="info" class="col-md-12"></div>
-                            <div class="col-md-12" id="results"></div>
+        <div class="row mt-5 justify-content-md-center">
+            <div class="col-md-12">
+                <div id="frostedGlass" class="card shadow-lg p-3 mb-5 rounded">
+                    <div class="card-body row justify-content-md-center">
+                        <div class="col-md-12">
+                            <h3 class="text-light text-center">
+                                Click the following buttons to see some GIFs associated with them
+                            </h3>
+                            <h5 class="text-light text-center">
+                                (P.S: Hover over the buttons to see some MAGIC!)
+                            </h5>
                         </div>
+                        <div class="col-md-12 row justify-content-md-center" id="topics"></div>
+                        <form class="form col-md-12">
+                            <div class="form-group mx-sm-3 mb-2 row justify-content-md-center">
+                                <label for="inputKeyword">
+                                    <h5 class="text-light">You can also add something yourself below!</h5>
+                                </label>
+                                <input type="keyword" class="form-control shadow-sm p-3 mb-5 rounded"
+                                    id="inputTopic" placeholder="Keyword">
+                                <button id="add" type="button"
+                                    class="col-md-5 btn btn-sm btn-block btn-dark shadow-lg p-1 m-3 rounded">
+                                    Add Topic
+                                </button>
+                                <button id="clear" type="button"
+                                    class="col-md-5 btn btn-sm btn-block btn-dark shadow-lg p-1 m-3 rounded">
+                                    Clear Page
+                                </button>
+                            </div>
+                        </form>
+                        <div id="info" class="col-md-12"></div>
+                        <div class="col-md-12" id="results"></div>
                     </div>
                 </div>
             </div>

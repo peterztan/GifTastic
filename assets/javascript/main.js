@@ -24,9 +24,10 @@ $('document').ready(function () {
         s.text("Click on the GIFs below to animate them!");
 
         $('#info').append(s);
+        $('#info').append("<br>")
 
         var memes = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=Y9pnMmdPnIYLKiuzi40iVVmzTU8mCNfF&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=Y9pnMmdPnIYLKiuzi40iVVmzTU8mCNfF&limit=12";
 
         $.ajax({
             url: queryURL,
@@ -39,7 +40,7 @@ $('document').ready(function () {
 
                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                     var memesDiv = $("<div>");
-                    memesDiv.addClass("card-transparent row justify-content-md-center");
+                    memesDiv.addClass("memes-div col-md-3 card-transparent row");
 
                     var rating = results[i].rating;
                     var title = results[i].title;
@@ -60,7 +61,7 @@ $('document').ready(function () {
                     memeImage.attr("data-still", results[i].images.fixed_height_small_still.url);
                     memeImage.attr("data-animate", results[i].images.fixed_height_small.url);
 
-                    memeImage.addClass("card-img img-fluid shadow-lg rounded");
+                    memeImage.addClass("card-img shadow-lg rounded");
                     memeImage.addClass("gif");
 
                     memesDiv.append(memeImage);
